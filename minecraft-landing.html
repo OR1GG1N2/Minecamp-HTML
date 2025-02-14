@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecamp - Ванильный сервер Minecraft</title>
+    <script src="https://unpkg.com/lucide@0.475.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Навбар -->
+    <nav class="bg-gray-900/90 border-b border-gray-800 fixed w-full z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-white font-bold text-xl">Minecamp</a>
+                    <div class="hidden md:flex items-center space-x-4 ml-10">
+                        <a href="#rules" class="text-gray-300 hover:text-white px-3 py-2">Правила</a>
+                        <a href="#wiki" class="text-gray-300 hover:text-white px-3 py-2">Wiki</a>
+                        <a href="#start" class="text-gray-300 hover:text-white px-3 py-2">Начать игру</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <div class="flex items-center text-gray-300">
+                        <i data-lucide="users" class="w-5 h-5 mr-2"></i>
+                        <span>24/100</span>
+                    </div> -->
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white flex items-center">
+                        <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                        Telegram
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главная секция -->
+    <section class="relative min-h-screen">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-[url('https://i.imgur.com/Z84ZHEw.png')] bg-cover bg-center brightness-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 h-screen flex flex-col justify-center items-center text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Minecamp</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300">Чистый ванильный сервер Minecraft</p>
+            <div class="bg-gray-800/80 p-4 rounded-lg flex items-center space-x-4 mb-8">
+                <div class="text-gray-400">IP сервера:</div>
+                <div class="font-mono text-lg">smp.origg.in</div>
+                <button class="p-2 hover:bg-gray-700 rounded-lg" id="copyIp">
+                    <i data-lucide="copy" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Кнопки быстрой навигации -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4">
+            <a href="https://wiki.origg.in/" class="bg-gray-800/80 hover:bg-gray-700/80 px-6 py-3 rounded-lg flex items-center">
+                <i data-lucide="book" class="w-5 h-5 mr-2"></i>
+                Wiki
+            </a>
+            <a href="https://wiki.origg.in/pravila-igry-na-servere" class="bg-gray-800/80 hover:bg-gray-700/80 px-6 py-3 rounded-lg flex items-center">
+                <i data-lucide="shield" class="w-5 h-5 mr-2"></i>
+                Правила
+            </a>
+            <a href="https://wiki.origg.in/informaciya-o-podklyuchenii" class="bg-gray-800/80 hover:bg-gray-700/80 px-6 py-3 rounded-lg flex items-center">
+                <i data-lucide="play" class="w-5 h-5 mr-2"></i>
+                Начать игру
+            </a>
+        </div>
+    </section>
+
+    <!-- Wiki секция -->
+    <section id="wiki" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Wiki</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://minecamp.dynmap.xyz/">
+                <div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="map" class="w-6 h-6 mr-3 text-blue-400"></i>
+                        <h3 class="text-xl font-bold">Карта мира</h3>
+                    </div>
+                    <p class="text-gray-300">Карта сервера ограничена 10к блоков, что позволяет добраться к любому игроку за пару минут</p>
+                </div>
+                 </a>
+                <div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="sword" class="w-6 h-6 mr-3 text-red-400"></i>
+                        <h3 class="text-xl font-bold">Кастомные предметы</h3>
+                    </div>
+                    <p class="text-gray-300">Добавлен крафт кастомных предметов, которые помогут в реализации ваших планов</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="home" class="w-6 h-6 mr-3 text-green-400"></i>
+                        <h3 class="text-xl font-bold">Приват территории</h3>
+                    </div>
+                    <p class="text-gray-300">Сервер абсолютно ванильный, приватов нету</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Правила -->
+    <section id="rules" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Правила сервера</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Основные правила</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Запрещен гриферинг и воровство чужого имущества</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Запрещено использование читов и эксплойтов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Уважайте других игроков, не оскорбляйте никого</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Строительство</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Минимальное расстояние между базами - 300 блоков</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Запрещено строительство неприличных построек</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-2 text-green-400 flex-shrink-0"></i>
+                            <span>Не портите ландшафт, восстанавливайте после себя</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как начать играть -->
+    <section id="start" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Как начать играть</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="download" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">1. Установите игру</h3>
+                    <p class="text-gray-300">Скачайте и установите лицензионный Minecraft версии 1.21</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="server" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">2. Подключитесь</h3>
+                    <p class="text-gray-300">Добавьте сервер smp.origg.in в список серверов</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">3. Играйте</h3>
+                    <p class="text-gray-300">Присоединяйтесь к сообществу и начните свое приключение</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Инициализация иконок
+        lucide.createIcons();
+
+        // Копирование IP
+        document.getElementById('copyIp').addEventListener('click', function() {
+            navigator.clipboard.writeText('smp.origg.in');
+            this.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i>';
+            lucide.createIcons();
+            setTimeout(() => {
+                this.innerHTML = '<i data-lucide="copy" class="w-5 h-5"></i>';
+                lucide.createIcons();
+            }, 2000);
+        });
+
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
